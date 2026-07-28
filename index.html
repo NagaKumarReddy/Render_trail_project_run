@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Launchpad — a tiny deploy-learning app</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sky"></div>
+
+  <main class="deck">
+    <header class="deck__header">
+      <div class="eyebrow">MISSION CONTROL</div>
+      <h1>Launchpad</h1>
+      <p class="sub">A minimal to-do app — built so you have something real to push to GitHub and deploy on Render.</p>
+    </header>
+
+    <section class="gauge" aria-label="Launch progress">
+      <div class="gauge__track">
+        <div class="gauge__rocket" id="rocket">🚀</div>
+        <div class="gauge__fill" id="gaugeFill"></div>
+      </div>
+      <div class="gauge__label">
+        <span id="gaugeText">0 / 0 checks complete</span>
+        <span class="gauge__pct" id="gaugePct">0%</span>
+      </div>
+    </section>
+
+    <form id="taskForm" class="composer">
+      <input
+        id="taskInput"
+        type="text"
+        placeholder="Add a pre-launch check… e.g. push code to GitHub"
+        autocomplete="off"
+        maxlength="140"
+      />
+      <button type="submit">Add</button>
+    </form>
+
+    <section class="list-wrap">
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyState" class="empty-state">No checks yet. Add your first one above — try "deploy to Render".</p>
+    </section>
+
+    <footer class="deck__footer">
+      <span id="statusDot" class="status-dot"></span>
+      <span id="statusText">checking server…</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
